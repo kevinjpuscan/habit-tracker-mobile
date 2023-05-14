@@ -12,6 +12,7 @@ export function HistoryList({historyList}){
 const styles  = StyleSheet.create({
 historyList:{
   flexDirection: 'row',
+  flexWrap: 'wrap',
   gap: 10,
 }
 })
