@@ -5,6 +5,7 @@ import { HeaderHabitDetail } from '../../src/components/HeaderHabitDetail';
 
 export default function Test(){
   const {id} = useSearchParams();
+
   const habit = {
     id: 1,
     name: 'Hace ejercicio',

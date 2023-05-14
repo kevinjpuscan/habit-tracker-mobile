@@ -53,8 +53,8 @@ export function HabitsList(){
   return  <ScrollView>
   <View style={styles.container}> 
   {habits.map(habit => (
-    <Link href={`/habits/${habit.id}`}>
-      <HabitCard name={habit.name} record={habit.record} nextMilestone={habit.nextMilestone} lastHistory={habit.lastHistory}/>
+    <Link href={`/habits/${habit.id}`} key={`link-${habit.id}`}>
+      <HabitCard key={habit.id} name={habit.name} record={habit.record} nextMilestone={habit.nextMilestone} lastHistory={habit.lastHistory}/>
     </Link>
   ))}
   </View>
