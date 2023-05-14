@@ -2,25 +2,17 @@ import { Stack, useSearchParams, Link } from 'expo-router';
 import {View, StyleSheet} from 'react-native';
 import colors from '../../src/theme/colors';
 import { HeaderHabitDetail } from '../../src/components/HeaderHabitDetail';
+import habitRepository from '../../src/core/habitInMemoryRepository'
+const {useState,useEffect} = require("react");
 
 export default function Test(){
   const {id} = useSearchParams();
+  const [habit, setHabit] = useState({});
+  useEffect(() => {
+    console.log(id)
+    habitRepository.findById(id).then((habit)=>setHabit(habit))
+  },[]);
 
-  const habit = {
-    id: 1,
-    name: 'Hace ejercicio',
-    record: 75,
-    nextMilestone: 100,
-    lastHistory: [
-      { date: new Date(), type: 'completed' },
-      { date: new Date('2023-05-12'), type: 'completed' },
-      { date: new Date('2023-05-11'), type: 'completed' },
-      { date: new Date('2023-05-8'), type: 'failed' },
-      { date: new Date('2023-05-6'), type: 'completed' },
-      { date: new Date('2023-05-3'), type: 'completed' },
-      { date: new Date('2023-05-2'), type: 'completed' },
-    ],
-  }
   return <View>
     <Stack.Screen options={{headerShown:false}} />
     <HeaderHabitDetail name={habit.name} record={habit.record} nextMilestone={habit.nextMilestone} />
