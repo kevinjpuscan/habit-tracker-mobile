@@ -6,7 +6,7 @@ import { HistoryList } from './HistoryList';
 
 export function HabitCard({name,record,nextMilestone,lastHistory}){
   return <View style={[styles.card,styles.shadowProp]}>
-      <Subtitle>{name}</Subtitle>
+      <Subtitle>{name} {`(${record}/${nextMilestone})`}</Subtitle>
       <ProgressBar progress={record*100/nextMilestone} />
       <HistoryList historyList={lastHistory}/>
   </View>;
