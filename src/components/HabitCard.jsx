@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',  
     borderRadius: 10,  
     padding:18,
-    width: '100%',  
+    minWidth: '100%',  
     gap: 10,
   },
   shadowProp: {

@@ -1,9 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
-import { Title } from '../src/design-system/Title';
-import { HabitCard } from '../src/components/HabitCard';
+import { HabitCard } from '../../src/components/HabitCard';
+import { Link,Stack } from 'expo-router';
 
-export default function App() {
+export default function Home() {
   const habit = {
     id: 1,
     name: 'Hace ejercicio',
@@ -12,7 +12,7 @@ export default function App() {
     lastHistory: [
       { date: new Date(), type: 'completed' },
       { date: new Date('2023-05-12'), type: 'completed' },
-      { date: new Date('2023-05-10'), type: 'completed' },
+      { date: new Date('2023-05-11'), type: 'completed' },
       { date: new Date('2023-05-8'), type: 'failed' },
       { date: new Date('2023-05-6'), type: 'completed' },
       { date: new Date('2023-05-3'), type: 'completed' },
@@ -21,8 +21,10 @@ export default function App() {
   }
   return (
     <View style={styles.container}>
-      <Title>Mis Hábitos</Title>
-      <HabitCard name={habit.name} record={habit.record} nextMilestone={habit.nextMilestone} lastHistory={habit.lastHistory}/>
+      <Stack.Screen options={{headerShown:true,title:'Mis hábitos'}} />
+      <Link href={`/habits/${habit.id}`}>
+        <HabitCard name={habit.name} record={habit.record} nextMilestone={habit.nextMilestone} lastHistory={habit.lastHistory}/>
+      </Link>
       <StatusBar style="auto" />
     </View>
   );
@@ -30,7 +32,6 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 42,
-    paddingHorizontal: 16, 
+    padding: 24,
    },
 });
