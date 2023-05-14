@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "scheme": "acme",
+    "web": {
+      "bundler": "metro"
+    },
+    "name": "habit-tracker-mobile",
+    "slug": "habit-tracker-mobile"
+  }
+}
