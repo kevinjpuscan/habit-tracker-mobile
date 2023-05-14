@@ -1,5 +1,6 @@
 export default {
-  habits : [{
+  habits : [
+    {
     id: 1,
     name: 'Hace ejercicio',
     record: 75,

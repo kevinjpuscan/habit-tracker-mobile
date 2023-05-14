@@ -27,7 +27,7 @@ const secondary=colors.secondary;
 
 const styles = StyleSheet.create({
   background:{
-    minHeight:200,
+    minHeight:300,
     width:'100%',
     justifyContent:'center',
     alignItems:'center',
